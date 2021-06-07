@@ -1,0 +1,10 @@
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\ProjectVP.exe.config
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\ProjectVP.exe
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\ProjectVP.pdb
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.Properties.Resources.resources
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.Vaccination_center.resources
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.exe
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.pdb
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.AssemblyReference.cache
