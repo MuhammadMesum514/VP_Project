@@ -16,7 +16,7 @@ namespace ProjectVP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vaccination_center());
+            Application.Run(new login());
         }
     }
 }

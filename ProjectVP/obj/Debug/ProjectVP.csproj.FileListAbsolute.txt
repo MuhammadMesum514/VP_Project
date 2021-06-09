@@ -8,3 +8,15 @@ C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.CoreCo
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.exe
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.pdb
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.AssemblyReference.cache
+E:\Vs_projects\VP_Project\ProjectVP\bin\Debug\ProjectVP.exe.config
+E:\Vs_projects\VP_Project\ProjectVP\bin\Debug\ProjectVP.exe
+E:\Vs_projects\VP_Project\ProjectVP\bin\Debug\ProjectVP.pdb
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.csprojAssemblyReference.cache
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.login.resources
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.Properties.Resources.resources
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.Vaccination_center.resources
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.csproj.GenerateResource.cache
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.csproj.CoreCompileInputs.cache
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.exe
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.pdb
+E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.AdminPanel.resources

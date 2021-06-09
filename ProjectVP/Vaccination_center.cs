@@ -142,5 +142,12 @@ namespace ProjectVP
         {
             insert_data_in_vaccination_table();
         }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            login form = new login();
+            form.Show();
+            this.Hide();
+        }
     }
 }
