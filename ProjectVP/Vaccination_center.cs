@@ -140,6 +140,7 @@ namespace ProjectVP
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // a comment to test git
             insert_data_in_vaccination_table();
         }
 
