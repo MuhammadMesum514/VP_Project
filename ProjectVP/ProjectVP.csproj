@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="startpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="startpage.Designer.cs">
+      <DependentUpon>startpage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vaccination_center.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="startpage.resx">
+      <DependentUpon>startpage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vaccination_center.resx">
       <DependentUpon>Vaccination_center.cs</DependentUpon>
     </EmbeddedResource>

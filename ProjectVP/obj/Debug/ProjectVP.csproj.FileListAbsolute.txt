@@ -22,3 +22,4 @@ E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.pdb
 E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.AdminPanel.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.AdminPanel.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.login.resources
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.startpage.resources

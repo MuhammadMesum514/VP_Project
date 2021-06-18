@@ -17,44 +17,107 @@ namespace ProjectVP
         {
             InitializeComponent();
         }
+        string connection = @"Data Source=SAM\SQLDEVELOPER;Initial Catalog=VaccinationSystem;Integrated Security=True;MultipleActiveResultSets=True;";
+        
+
+
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SKRQQHL\SQLEXPRESS;Initial Catalog=VaccinationSystem;Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("Select * from login where username = '" + textBox1.Text + "' and password = '" + textBox2.Text + "'", con);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            string value = comboBox1.SelectedItem.ToString();
-            adapter.Fill(table);
-            if(table.Rows.Count > 0)
+            form_login();
+        }
+        public void bindata()
+        {
+            using (SqlConnection con = new SqlConnection(connection))
             {
-                for(int i=0; i < table.Rows.Count; i++)
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select CITY from city_login", con))
                 {
-                    if (table.Rows[i]["user_role"].ToString() == value)
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        if(comboBox1.SelectedIndex == 0)
-                        {
-                            AdminPanel form = new AdminPanel();
-                            form.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            Vaccination_center form = new Vaccination_center();
-                            form.Show();
-                            this.Hide();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid User Role login");
+                        comboBox1.Items.Add(dr[0].ToString());
                     }
                 }
             }
-            else
+        }
+        public bool verify(string s)
+        {
+            
+            try
             {
-                MessageBox.Show("Invalid Credentials");
+                using (SqlConnection con = new SqlConnection(connection))
+                {
+
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("select braNch_code from branches where city=@city", con))
+                    {
+                        cmd.Parameters.AddWithValue("@city", s);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            if (textBox3.Text == dr[0].ToString())
+                            {
+                                return true;
+                            }
+                            else {
+                                return false;
+                            }
+                        }
+
+                    }
+                }
+                return false;
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("no record found"+e.StackTrace);
+                return false;
+                
+            }
+        }
+        public void form_login()
+        {
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                string value = comboBox1.SelectedItem.ToString();
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select login,pass from city_login where CITY=@city", con))
+                {
+                    cmd.Parameters.AddWithValue("@city", value);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if(dr["login"].ToString()==textBox1.Text && dr["pass"].ToString() == textBox2.Text)
+                        {
+                            if (verify(value)) //will check for branch code
+                            {
+                                MessageBox.Show("login sucessful");
+                                Vaccination_center vc = new Vaccination_center();
+                                vc.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("branch code is not valid");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("invalid login Credentials");
+                        }
+                    }
+                }
+            }
+        }
+        private void login_Load(object sender, EventArgs e)
+        {
+            bindata();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

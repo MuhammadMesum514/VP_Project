@@ -218,7 +218,7 @@ namespace ProjectVP
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-            login form = new login();
+            startpage form = new startpage();
             form.Show();
             this.Hide();
         }
