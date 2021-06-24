@@ -16,7 +16,7 @@ namespace ProjectVP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new startpage());
+            Application.Run(new global_report_evaluation());
         }
     }
 }

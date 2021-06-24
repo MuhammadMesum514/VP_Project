@@ -23,3 +23,14 @@ E:\Vs_projects\VP_Project\ProjectVP\obj\Debug\ProjectVP.AdminPanel.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.AdminPanel.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.login.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.startpage.resources
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.dll
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.pdb
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.xml
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.global_report_evaluation.resources
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.CopyComplete
