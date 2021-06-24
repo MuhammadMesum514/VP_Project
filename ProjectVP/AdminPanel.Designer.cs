@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Logoutbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Logoutbtn
@@ -41,11 +42,22 @@
             this.Logoutbtn.UseVisualStyleBackColor = true;
             this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(69, 146);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Global Report";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Logoutbtn);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
@@ -56,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button Logoutbtn;
+        private System.Windows.Forms.Button button1;
     }
 }

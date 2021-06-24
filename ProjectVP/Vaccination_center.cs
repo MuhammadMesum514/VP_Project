@@ -11,8 +11,11 @@ using System.Windows.Forms;
 
 namespace ProjectVP
 {
+    
     public partial class Vaccination_center : Form
     {
+        string cityname;
+        string branchname;
         
         string connection=@"Data Source=SAM\SQLDEVELOPER;Initial Catalog=VaccinationSystem;Integrated Security=True;MultipleActiveResultSets=True;";
 
@@ -37,6 +40,14 @@ namespace ProjectVP
         {
             fetch_data();
             
+        }
+        public void show_city(string c)
+        {
+            cityname = c;
+        }
+        public void show_branch(string b)
+        {
+            branchname = b;
         }
 
         // method for fetching data in gridview
@@ -116,7 +127,7 @@ namespace ProjectVP
                                 string name = string.Concat(dr["first_name"], " ", dr["last_name"]);
                                 string cnic = dr["cnic"].ToString();
                                 int age = Int32.Parse(dr["age"].ToString());
-                                string center = comboBox1.SelectedItem.ToString();
+                                string center = label5.Text;
                                 string status = radiobtn_vaccination_status();
                                 string dt = DateTime.Now.ToString("yyyy-MM-dd");
                                 int reg_id = Int32.Parse(dr["registration_id"].ToString());
@@ -192,7 +203,8 @@ namespace ProjectVP
 
         private void Vaccination_center_Load(object sender, EventArgs e)
         {
-            
+            label5.Text = branchname;
+            label6.Text = cityname;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,6 +233,11 @@ namespace ProjectVP
             startpage form = new startpage();
             form.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

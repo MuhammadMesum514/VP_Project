@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ProjectVP;
 
 namespace ProjectVP
 {
+
     public partial class login : Form
     {
+        string value,bcode;
+
         public login()
         {
             InitializeComponent();
         }
         string connection = @"Data Source=SAM\SQLDEVELOPER;Initial Catalog=VaccinationSystem;Integrated Security=True;MultipleActiveResultSets=True;";
         
+
 
 
 
@@ -41,7 +46,26 @@ namespace ProjectVP
                 }
             }
         }
-        public bool verify(string s)
+
+        public void getbranchname() // get branch name for next form
+        {
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select center_name from branches where branch_code=@branch", con))
+                {
+                    cmd.Parameters.AddWithValue("@branch", textBox3.Text);
+                    SqlDataReader dr= cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        bcode = dr[0].ToString();
+                    }
+
+                }
+            }
+        }
+        public bool verify(string s) //verify branch code
         {
             
             try
@@ -80,7 +104,7 @@ namespace ProjectVP
         {
             using (SqlConnection con = new SqlConnection(connection))
             {
-                string value = comboBox1.SelectedItem.ToString();
+                 value = comboBox1.SelectedItem.ToString();
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("select login,pass from city_login where CITY=@city", con))
                 {
@@ -92,8 +116,12 @@ namespace ProjectVP
                         {
                             if (verify(value)) //will check for branch code
                             {
+                                getbranchname();
+                               
                                 MessageBox.Show("login sucessful");
                                 Vaccination_center vc = new Vaccination_center();
+                                vc.show_city(value);
+                                vc.show_branch(bcode);
                                 vc.Show();
                                 this.Hide();
                             }
