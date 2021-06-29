@@ -23,5 +23,12 @@ namespace ProjectVP
             branch.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminPanel ap = new AdminPanel();
+            ap.Show();
+            this.Hide();
+        }
     }
 }

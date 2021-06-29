@@ -26,7 +26,16 @@ namespace ProjectVP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            global_report_evaluation gre = new global_report_evaluation();
+            gre.Show();
+            this.Hide();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            City_based_Evaluation cbe = new City_based_Evaluation();
+            cbe.Show();
+            this.Hide();
         }
     }
 }

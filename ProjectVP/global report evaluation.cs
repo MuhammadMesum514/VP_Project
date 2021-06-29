@@ -36,6 +36,7 @@ namespace ProjectVP
                 using (SqlCommand cmd = new SqlCommand("global_chart", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     SqlDataReader dr = cmd.ExecuteReader();
                     chartdata.Load(dr);
 

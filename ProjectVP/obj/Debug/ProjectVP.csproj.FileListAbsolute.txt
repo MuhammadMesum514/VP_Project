@@ -34,3 +34,4 @@ C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.global_report_evaluation.resources
 C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.csproj.CopyComplete
+C:\Users\DELL\source\repos\ProjectVP\ProjectVP\obj\Debug\ProjectVP.City_based_Evaluation.resources

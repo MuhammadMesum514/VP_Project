@@ -68,6 +68,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="City based Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="City based Evaluation.Designer.cs">
+      <DependentUpon>City based Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="externalmethods.cs" />
     <Compile Include="global report evaluation.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="City based Evaluation.resx">
+      <DependentUpon>City based Evaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="global report evaluation.resx">
       <DependentUpon>global report evaluation.cs</DependentUpon>

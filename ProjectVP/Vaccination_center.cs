@@ -16,7 +16,8 @@ namespace ProjectVP
     {
         string cityname;
         string branchname;
-        
+        bool city_returned=false;
+
         string connection=@"Data Source=SAM\SQLDEVELOPER;Initial Catalog=VaccinationSystem;Integrated Security=True;MultipleActiveResultSets=True;";
 
        
@@ -62,18 +63,21 @@ namespace ProjectVP
                     {
                         cmd.Parameters.AddWithValue("@id", Int32.Parse(textBox1.Text));
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        //SqlDataReader reader = cmd.ExecuteReader();
+                        bool flag = verify_city();
+                        if (flag)
+                        {
+                            city_returned = false; // it will set verify city value to false so to be checked again on next searcg
+                            DataSet ds = new DataSet();
 
-                        //dataGridView1.DataSource = reader;
-                        //dataGridView1.DataBind();
-
-
-                        DataSet ds = new DataSet();
-
-                        adapter.Fill(ds, "fetch");
-                        // displaying data in gridview
-                        dataGridView1.DataSource = ds.Tables["fetch"].DefaultView;
-
+                            adapter.Fill(ds, "fetch");
+                            // displaying data in gridview
+                            dataGridView1.DataSource = ds.Tables["fetch"].DefaultView;
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Record found in this city");
+                        }
 
                     }
                 }
@@ -82,6 +86,29 @@ namespace ProjectVP
             {
                 MessageBox.Show(e.StackTrace);
             } 
+        }
+        public bool verify_city() // check if user is in the reg center of desired city
+        {
+            
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select city from registrants where registration_id=@id", con))
+                {
+                   
+                    cmd.Parameters.AddWithValue("@id", Int32.Parse(textBox1.Text));
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    
+                        while (dr.Read())
+                        {
+                            if (label6.Text == dr["city"].ToString())
+                                city_returned= true;
+                            
+                        }                                           
+                    return city_returned;
+
+                } 
+            }
         }
         // it will return text of selected radio button 
         public string radiobtn_vaccination_status()
@@ -98,6 +125,8 @@ namespace ProjectVP
         // inserting data in vaccination table
         public void insert_data_in_vaccination_table()
         {
+           
+            
             using (SqlConnection con = new SqlConnection(connection))
             {
                 con.Open();
@@ -105,9 +134,9 @@ namespace ProjectVP
                 {
                     cmd.Parameters.AddWithValue("@id", Int32.Parse(textBox1.Text));
                     SqlDataReader dr = cmd.ExecuteReader();
-                   
-                    
-                   
+
+
+
 
                     if (dr.HasRows)
                     {
@@ -145,11 +174,15 @@ namespace ProjectVP
                             }
                         }
                         update_registration_form();
+                        
 
                     }
+
+
                 }
 
                 }
+            
 
         }
         // it will update vaccination status in registration form; we will call it in proceed button click event 
@@ -221,6 +254,24 @@ namespace ProjectVP
         {
 
         }
+        //public bool check_date()
+        //{
+        //    using (SqlConnection con = new SqlConnection(connection))
+        //    {
+        //        con.Open();
+        //        using (SqlCommand cmd = new SqlCommand("check_date", con))
+        //        {
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            SqlParameter param = new SqlParameter("@reg_id", Int32.Parse(textBox1.Text));
+        //            param.Direction = ParameterDirection.Input;
+        //            param.DbType = DbType.String;
+        //            cmd.Parameters.Add(param);
+        //            SqlDataReader dr = cmd.ExecuteReader();
+        //            if()
+        //        }
+        //    }
+
+        //        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -236,6 +287,11 @@ namespace ProjectVP
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

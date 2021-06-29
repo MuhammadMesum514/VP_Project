@@ -110,10 +110,10 @@ namespace ProjectVP
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(396, 359);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(99, 17);
+            this.radioButton2.Size = new System.Drawing.Size(118, 17);
             this.radioButton2.TabIndex = 6;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Not Vaccinated";
+            this.radioButton2.Text = "Partially Vaccinated";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -179,6 +179,7 @@ namespace ProjectVP
             this.label6.Size = new System.Drawing.Size(183, 29);
             this.label6.TabIndex = 13;
             this.label6.Text = "city name here";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Vaccination_center
             // 
