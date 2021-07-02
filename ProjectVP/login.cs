@@ -74,24 +74,30 @@ namespace ProjectVP
                 {
 
                     con.Open();
-                    using (SqlCommand cmd = new SqlCommand("select braNch_code from branches where city=@city", con))
+                    using (SqlCommand cmd = new SqlCommand("select branch_code from branches where city like @city", con))
                     {
-                        cmd.Parameters.AddWithValue("@city", s);
+                        cmd.Parameters.AddWithValue("@city", s.ToString());
                         SqlDataReader dr = cmd.ExecuteReader();
-                        while (dr.Read())
-                        {
-                            if (textBox3.Text == dr[0].ToString())
+                        if (dr.HasRows) { 
+                            while (dr.Read())
                             {
-                                return true;
+                                if (textBox3.Text == dr["branch_code"].ToString())
+                                {
+                                    return true;
+                                    
+                                }
                             }
-                            else {
-                                return false;
-                            }
+                          
                         }
+                       
+                            return false;
+                        
 
                     }
+                
                 }
-                return false;
+
+               
             }
             catch (Exception e)
             {

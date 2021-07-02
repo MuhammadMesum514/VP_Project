@@ -49,5 +49,11 @@ namespace ProjectVP
         {
             load_data();
         }
+
+        private void global_report_evaluation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AdminPanel ap = new AdminPanel();
+            ap.Show();
+        }
     }
 }

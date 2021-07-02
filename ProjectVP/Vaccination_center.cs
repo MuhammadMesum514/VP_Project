@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
 namespace ProjectVP
 {
     
@@ -20,7 +20,7 @@ namespace ProjectVP
 
         string connection=@"Data Source=SAM\SQLDEVELOPER;Initial Catalog=VaccinationSystem;Integrated Security=True;MultipleActiveResultSets=True;";
 
-       
+      
 
         public Vaccination_center()
         {
@@ -155,14 +155,15 @@ namespace ProjectVP
                             {
                                 string name = string.Concat(dr["first_name"], " ", dr["last_name"]);
                                 string cnic = dr["cnic"].ToString();
+                                
                                 int age = Int32.Parse(dr["age"].ToString());
                                 string center = label5.Text;
                                 string status = radiobtn_vaccination_status();
                                 string dt = DateTime.Now.ToString("yyyy-MM-dd");
                                 int reg_id = Int32.Parse(dr["registration_id"].ToString());
+                                string v_city = dr["city"].ToString();
 
-
-                                SqlCommand command = new SqlCommand("insert into vaccination_center (name,cnic,age,vaccination_center,status,vaccination_date,registration_id) values(@name,@cnic,@age,@vaccination_center,@status,@vaccination_date,@registration_id)", con);
+                                SqlCommand command = new SqlCommand("insert into vaccination_center (name,cnic,age,vaccination_center,status,vaccination_date,registration_id,city) values(@name,@cnic,@age,@vaccination_center,@status,@vaccination_date,@registration_id,@v_city)", con);
                                 command.Parameters.AddWithValue("@name", name);
                                 command.Parameters.AddWithValue("@cnic", cnic);
                                 command.Parameters.AddWithValue("@age", age);
@@ -170,6 +171,7 @@ namespace ProjectVP
                                 command.Parameters.AddWithValue("@status", status);
                                 command.Parameters.AddWithValue("@vaccination_date", dt);
                                 command.Parameters.AddWithValue("@registration_id", reg_id);
+                                command.Parameters.AddWithValue("@v_city", v_city);
                                 command.ExecuteNonQuery();
                             }
                         }

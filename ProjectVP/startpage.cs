@@ -26,9 +26,19 @@ namespace ProjectVP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AdminPanel ap = new AdminPanel();
+           Admin_Login ap = new Admin_Login();
             ap.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void startpage_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

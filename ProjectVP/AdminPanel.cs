@@ -19,7 +19,7 @@ namespace ProjectVP
 
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
-            login form = new login();
+            startpage form = new startpage();
             form.Show();
             this.Hide();
         }
@@ -36,6 +36,14 @@ namespace ProjectVP
             City_based_Evaluation cbe = new City_based_Evaluation();
             cbe.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            manage_registrant mr = new manage_registrant();
+            mr.Show();
+            this.Hide();
+            
         }
     }
 }
